@@ -168,7 +168,6 @@ void clook(){
     printf("\nTotal Distance Traversed: %d\n", distance);
 }
 int main(){
-    input();
     while(1){
         menu();
         switch (choice){

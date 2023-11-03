@@ -165,19 +165,16 @@ int main(){
     int choice;
     getData();
     while(1){
-        printf("\nPage Replacement Algorithms\n1.Enter data\n2.FIFO\n3.Optimal\n4.LRU\n5.Exit\nEnter your choice:");
+        printf("\nPage Replacement Algorithms\n1.FIFO\n2.Optimal\n3.LRU\n4.Exit\nEnter your choice:");
         scanf("%d",&choice);
         switch(choice){
         case 1:
-            getData();
-            break;
-        case 2:
             fifo();
             break;
-        case 3:
+        case 2:
             optimal();
             break;
-        case 4:
+        case 3:
             lru();
             break;
         default:
