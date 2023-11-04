@@ -1,4 +1,5 @@
 /* Assignment No.2 A 
+
 A. Implement the C program in which main program accepts the integers to be sorted. Main program
 uses the FORK system call to create a new process called a child process. Parent process sorts the
 integers using sorting algorithm and waits for child process using WAIT system call to sort the integers
