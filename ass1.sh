@@ -9,10 +9,6 @@
 
 address_book="address_book.txt"
 
-if [ ! -e "$address_book" ]; then
-    touch "$address_book"
-fi
-
 function print_menu {
     echo "Address Book Menu:"
     echo "1) View address book"
