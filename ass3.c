@@ -1,3 +1,9 @@
+/*
+Assignment No. 3: 
+Implement the C program for CPU Scheduling Algorithms: Shortest Job First 
+(Preemptive) and Round Robin with different arrival time.
+*/
+
 #include <stdio.h>
 
 struct Table {

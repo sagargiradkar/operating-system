@@ -1,6 +1,0 @@
-
-No. of Lines are: 0
-
-No. of words are: 11
-
-No. of characters are: 40
