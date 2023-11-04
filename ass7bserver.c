@@ -32,11 +32,12 @@ int main()
     if ((shmid = shmget(key, MAXSIZE, IPC_CREAT | 0666)) < 0)
         die("shmget");
 
-    if ((shm = shmat(shmid, NULL, 0)) == (char *) -1)
+    if ((shm = shmat(shmid, NULL, 0)) == (char *)-1)
         die("shmat");
 
     printf("Enter a string (up to 26 characters): ");
-    if (fgets(shm, MAXSIZE, stdin) == NULL) {
+    if (fgets(shm, MAXSIZE, stdin) == NULL)
+    {
         printf("Input error\n");
         exit(1);
     }
@@ -58,4 +59,3 @@ int main()
 
     exit(0);
 }
-

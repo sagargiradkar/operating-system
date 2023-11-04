@@ -22,7 +22,7 @@ void die(char *s)
 
 int main()
 {
-    int shmid, retval;  // Declare 'retval' here
+    int shmid, retval; // Declare 'retval' here
     key_t key;
     char *shm, *s;
 
@@ -55,4 +55,3 @@ int main()
 
     exit(0);
 }
-

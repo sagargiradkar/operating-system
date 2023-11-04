@@ -1,5 +1,5 @@
 /*
-Assignment No 4b 
+Assignment No 4b
 B. Thread synchronization and mutual exclusion using mutex. Application to demonstrate: Reader-
 Writer problem with reader priority.
 */
@@ -16,8 +16,10 @@ pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_barrier_t barrier;
 int shared_data;
 
-void *writer(void *arg) {
-    for (int i = 0; i < NUM_ITERATIONS; i++) {
+void *writer(void *arg)
+{
+    for (int i = 0; i < NUM_ITERATIONS; i++)
+    {
         int random_number = rand() % 100; // Generate a random number
 
         pthread_mutex_lock(&mutex);
@@ -30,9 +32,11 @@ void *writer(void *arg) {
     pthread_exit(NULL);
 }
 
-void *reader(void *arg) {
+void *reader(void *arg)
+{
     int reader_id = *((int *)arg);
-    for (int i = 0; i < NUM_ITERATIONS; i++) {
+    for (int i = 0; i < NUM_ITERATIONS; i++)
+    {
         pthread_barrier_wait(&barrier);
 
         pthread_mutex_lock(&mutex);
@@ -45,7 +49,8 @@ void *reader(void *arg) {
     pthread_exit(NULL);
 }
 
-int main() {
+int main()
+{
     srand(time(NULL));
     pthread_t writer_thread, reader_threads[NUM_READERS];
     int reader_ids[NUM_READERS] = {1, 2, 3};
@@ -53,12 +58,14 @@ int main() {
     pthread_barrier_init(&barrier, NULL, NUM_READERS);
 
     pthread_create(&writer_thread, NULL, writer, NULL);
-    for (int i = 0; i < NUM_READERS; i++) {
+    for (int i = 0; i < NUM_READERS; i++)
+    {
         pthread_create(&reader_threads[i], NULL, reader, &reader_ids[i]);
     }
 
     pthread_join(writer_thread, NULL);
-    for (int i = 0; i < NUM_READERS; i++) {
+    for (int i = 0; i < NUM_READERS; i++)
+    {
         pthread_join(reader_threads[i], NULL);
     }
 
@@ -66,4 +73,3 @@ int main() {
 
     return 0;
 }
-

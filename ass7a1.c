@@ -17,12 +17,11 @@ output.
 
 int main()
 {
-	int fd1,fd2;
+	int fd1, fd2;
 
 	// FIFO file path
-	char * FIFO1 = "FIFO1";
-	char * FIFO2 = "FIFO2";
-	
+	char *FIFO1 = "FIFO1";
+	char *FIFO2 = "FIFO2";
 
 	// Creating the named file(FIFO)
 	// mkfifo(<pathname>, <permission>)
@@ -41,7 +40,7 @@ int main()
 
 		// Write the input arr2ing on FIFO
 		// and close it
-		write(fd1, arr2, strlen(arr2)+1);
+		write(fd1, arr2, strlen(arr2) + 1);
 		close(fd1);
 
 		// Open FIFO for Read only
@@ -56,4 +55,3 @@ int main()
 	}
 	return 0;
 }
-
